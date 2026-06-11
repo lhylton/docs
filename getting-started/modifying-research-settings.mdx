@@ -1,0 +1,122 @@
+---
+title: "Modifying Research Settings to Customize Your Study"
+sidebarTitle: "Research Settings"
+description: "Tailor your Strella study — from AI moderator voice and recording options to access controls, branding, and advanced AI provider configuration."
+---
+
+Once your project is created, the **Settings panel** gives you precise control over how your study runs and how it appears to participants. Access it by clicking the **gear icon** in the top-right corner of your project. The sections below cover every available setting — expand any section to see what each option does and when to change it.
+
+## How to Open Settings
+
+Navigate to your project, then click the **⚙ gear icon** in the top-right corner. The settings panel opens on the left side, organized into the sections described below.
+
+<Accordion title="Research Plan">
+  Define or update the core intent of your study. Strella uses these fields to shape AI moderation and link insights back to your goals.
+
+  | Setting | What it does |
+  |---|---|
+  | **Research objectives** | View and edit the goals you set when you created the study. Update these any time your direction shifts — stale objectives lead to misaligned insights. |
+  | **Internal project name** | A name your team uses to identify the project. Participants never see this. |
+  | **About your company** | Describe your company's industry, product type, primary purpose, unique features, and target audience. This context helps the AI moderator ask more relevant follow-up questions. |
+
+  <Tip>
+    Keep your research objectives current. If your study evolves mid-field, update this section before analyzing results so insights reflect your latest goals.
+  </Tip>
+</Accordion>
+
+<Accordion title="Interview Details">
+  Control what participants see when they first encounter your study.
+
+  | Setting | What it does |
+  |---|---|
+  | **Participant-facing study name** | The friendly title participants see on the join screen. Make it clear and approachable — avoid internal codes or jargon. |
+  | **Study description** | A brief explanation of the study's purpose, what participants will do, how long it takes, and any incentive they'll receive. |
+
+  <Note>
+    A clear, transparent description improves completion rates. Participants who know what to expect are less likely to drop off mid-session.
+  </Note>
+</Accordion>
+
+<Accordion title="Interview Setup">
+  Customize how the AI moderator behaves, what is recorded during each session, and how participants access your study.
+
+  **Moderator behavior**
+
+  | Setting | What it does |
+  |---|---|
+  | **Default moderator language** | Choose the language the AI speaks during interviews. Strella supports a wide range of languages. |
+  | **Response speed** | Controls how quickly the AI responds after a participant pauses. Faster responses feel more conversational but risk interrupting; slower speeds work better for task-focused studies like usability tests. |
+  | **Global moderator guidance** | Give the AI standing instructions that apply to every interview and every participant — for example, "Always ask participants to think aloud" or "Never mention competitor products." |
+  | **Premium voices** | Enable higher-fidelity voice synthesis. Recommended when using the multilingual feature or when audio quality is a priority. |
+
+  **Recording options**
+
+  | Setting | What it does |
+  |---|---|
+  | **Webcam recording** | Prompts participants to enable their camera so facial expressions and reactions are captured. |
+  | **Screen recording** *(desktop only)* | Asks participants to share and record their screen — ideal for website walkthroughs, prototype testing, or any task requiring on-screen observation. |
+
+  <Warning>
+    Screen recording is only available for **desktop** interviews. If you select "Mobile app" under Permitted Devices, this option will have no effect.
+  </Warning>
+
+  **Participant access**
+
+  | Setting | What it does |
+  |---|---|
+  | **Permitted devices** | Control whether participants can join on **Desktop only** or via the **Mobile app**. Selecting "Mobile app" routes participants to the Strella iOS app instead of a desktop browser. |
+  | **Redirect to URL** | Automatically send participants to a URL of your choice when their session ends — useful for redirecting to a survey, a thank-you page, or a panel completion link. |
+</Accordion>
+
+<Accordion title="Access & Scheduling">
+  Manage who can join your study and when it closes.
+
+  | Setting | What it does |
+  |---|---|
+  | **Close study to new participants** | Toggle on to immediately stop accepting new participants. Existing sessions in progress are not affected. |
+  | **Schedule close date** | Set a specific date and time for the study to close automatically — useful when you have a hard deadline. |
+  | **Set participant limit** | Define the maximum number of completed sessions before Strella automatically closes the study. |
+  | **Auto-invite participants** *(self-recruited only)* | Automatically send interview invitations to self-recruited participants who pass your screener criteria. |
+  | **Email required** | When enabled, participants must provide a valid email address before joining. |
+
+  <Tip>
+    Combine **Set participant limit** with **Schedule close date** to cap your study by either headcount or time — whichever comes first.
+  </Tip>
+</Accordion>
+
+<Accordion title="Theme">
+  Customize the visual appearance of your participant-facing registration forms to reinforce your brand identity.
+
+  | Setting | What it does |
+  |---|---|
+  | **Company logo** | Upload your logo to display at the top of participant-facing forms, making the experience feel familiar and trustworthy. |
+  | **Button color** | Set a hex color that matches your brand palette. This color applies to all call-to-action buttons on the registration and join screens. |
+</Accordion>
+
+<Accordion title="Insights">
+  Choose which insights experience you want for this project.
+
+  | Option | When to use it |
+  |---|---|
+  | **Traditional** | The standard insights view — reliable and familiar. Best for reviewing older projects or when you prefer the established layout. |
+  | **Beta** | The next-generation experience with streamlined sharing, enhanced highlight reels, an updated explorer, and deeper AI-generated insights. Recommended for new projects. |
+
+  <Info>
+    You can switch between Traditional and Beta at any time without losing data. The Beta experience does not alter your underlying session recordings or transcripts.
+  </Info>
+</Accordion>
+
+<Accordion title="Advanced">
+  Configure the underlying AI services that power moderation, voice, and transcription. These settings are intended for teams with specific technical requirements or compliance needs.
+
+  | Setting | What it does |
+  |---|---|
+  | **Large Language Model (LLM)** | Select the language processing engine the AI moderator uses to understand and respond to participants. |
+  | **Text-to-Speech Provider (TTS)** | Choose the voice synthesis service that generates the moderator's spoken responses. |
+  | **Speech-to-Text Provider (STT)** | Select the transcription service that converts participant speech to text in real time. |
+  | **Prompt selection** | An experimental feature that lets you test alternative AI prompt configurations — useful for edge-case research scenarios or optimizing moderation quality. |
+
+  <Warning>
+    Changing Advanced settings affects all future sessions in this project. If you're unsure which provider to select, leave these at their defaults or contact Strella support before making changes.
+  </Warning>
+</Accordion>

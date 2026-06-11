@@ -1,0 +1,64 @@
+---
+title: "Add Conditional Logic to Your Strella Question Guide"
+sidebarTitle: "Conditional Logic"
+description: "Show specific guide sections only to qualifying participants by building audience rules based on screener answers or in-call survey responses."
+---
+
+Conditional logic lets you build branched pathways in your question guide so that certain sections are only shown to participants who meet specific criteria. Instead of every participant seeing every question, each person follows the path that matches their profile—making your interviews sharper, more relevant, and more respectful of participants' time.
+
+## What Conditional Logic Does
+
+When you apply audience rules to a section, Strella evaluates each participant's responses in real time and decides whether to include or skip that section. You can base conditions on:
+
+- **Screener Responses** — answers participants gave in the pre-interview screening survey.
+- **In-Call Survey Questions** — answers to multiple choice questions (single- or multi-select) that appear earlier in the guide itself.
+
+<Info>
+  Conditional logic is applied at the **section** level. Any questions, tasks, or media nested inside a conditional section will only be shown when all the section's audience rules are met.
+</Info>
+
+## Setting Up Conditional Logic
+
+<Steps>
+  <Step title="Click the section title">
+    In the left-hand guide panel, click the title of the section where you want to apply conditions. The section settings will open in the right-hand panel.
+  </Step>
+  <Step title="Toggle on Audience rules">
+    In the right-hand panel, switch the **Audience rules** toggle on. A condition builder will appear.
+  </Step>
+  <Step title="Select the question and response">
+    From the dropdown, choose the screener question or in-call multiple choice question you want to use as your condition. Then select the specific response value that should trigger this section.
+
+    <Tip>You can add multiple response options to a single condition—for example, show this section to participants who selected either "Weekly" or "Daily" for a frequency question.</Tip>
+  </Step>
+  <Step title="Add additional conditions">
+    Click **Add condition** to layer on more rules. All conditions must be met simultaneously (AND logic) for the section to be shown.
+  </Step>
+</Steps>
+
+## Example: Multi-Condition Audience Rule
+
+Suppose you are researching baby food purchasing behaviour and want to show a specific section only to a narrowly defined segment. Here is how you could build that logic:
+
+<Tabs>
+  <Tab title="Condition 1: Purchase frequency">
+    **Question:** How often do you shop online for baby food?
+
+    **Response values:** *Twice a month* or *More than twice a month*
+
+    This ensures participants are active online shoppers, not occasional ones.
+  </Tab>
+  <Tab title="Condition 2: Brand awareness">
+    **Question:** Which of the following baby food brands are you aware of? *(multi-select)*
+
+    **Response values:** Neither *Earth's Best* nor *Little Spoon* selected
+
+    This targets participants who have not encountered these specific brands—useful for unbiased concept testing.
+  </Tab>
+</Tabs>
+
+Together, these two conditions create a pathway that is only shown to participants who shop online for baby food at least twice a month **and** have not heard of Earth's Best or Little Spoon. Every other participant skips this section entirely.
+
+<Warning>
+  Make sure the questions you reference in your audience rules are placed **before** the conditional section in the guide. Strella evaluates conditions based on responses already collected earlier in the interview.
+</Warning>

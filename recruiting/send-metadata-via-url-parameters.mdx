@@ -1,0 +1,118 @@
+---
+title: "Send Metadata to Strella or Redirect URLs via Parameters"
+sidebarTitle: "URL Parameters"
+description: "Pass participant IDs, campaign tags, and analytics values via your Strella study link — capture them in Strella or forward to an external destination."
+---
+
+When you share a Strella study link, you can append URL parameters to carry metadata — participant identifiers, campaign tags, cohort labels, or analytics tracking values — through the interview flow. Strella supports two distinct modes: capturing that metadata inside Strella for later analysis, or forwarding it to an external redirect URL so your downstream systems receive it automatically after the interview ends.
+
+## Study URL Format
+
+Every Strella study has a unique public share link generated when you publish your project. The base format is:
+
+```text
+https://app.strella.io/onboard/{TOKEN}
+```
+
+For example:
+
+```text
+https://app.strella.io/onboard/abcd1234
+```
+
+Find this link by clicking the **Share** button in the upper-right corner of your study dashboard.
+
+## Mode 1: Capture Metadata in Strella
+
+Use standard URL parameter names (without any prefix) when you want Strella to store the values internally and associate them with the participant's record.
+
+**Example parameters:**
+- `user_id=abcd-1234-efgh-5678`
+- `source=cohort202602`
+
+**Full URL example:**
+
+```text
+https://app.strella.io/onboard/abcd1234?user_id=abcd-1234-efgh-5678&source=cohort202602
+```
+
+When a participant opens this link, Strella captures:
+
+| Parameter | Value |
+|-----------|-------|
+| `user_id` | `abcd-1234-efgh-5678` |
+| `source` | `cohort202602` |
+
+These values are stored with the participant's record in Strella so you can filter or reference them during analysis.
+
+## Mode 2: Forward Metadata to an External URL
+
+Use this mode when you want metadata passed to an external system after the interview ends — for example, to credit a panel provider or trigger a downstream workflow.
+
+<Note>
+  Forwarding requires **Redirect to URL** to be configured in your study settings. Strella appends the forwarded parameters to that destination URL after the participant finishes their call. See [Redirect Participants After Interview](/recruiting/redirect-participants) for setup steps.
+</Note>
+
+To forward metadata, add the `forward_` prefix to each parameter name in your study link. Strella strips the prefix before appending the parameters to the redirect destination.
+
+**Example parameters:**
+- `forward_user_id=abcd-1234-efgh-5678`
+- `forward_source=cohort202602`
+
+**Full study link example:**
+
+```text
+https://app.strella.io/onboard/abcd1234?forward_user_id=abcd-1234-efgh-5678&forward_source=cohort202602
+```
+
+**How parameters are forwarded:**
+
+| Parameter in study URL | Forwarded as on redirect URL |
+|------------------------|------------------------------|
+| `forward_user_id=...` | `user_id=...` |
+| `forward_source=...` | `source=...` |
+
+**If your Redirect to URL is configured as:**
+
+```text
+https://customer-redirect-url.com/call-completed
+```
+
+**Then Strella redirects the participant to:**
+
+```text
+https://customer-redirect-url.com/call-completed?user_id=abcd-1234-efgh-5678&source=cohort202602
+```
+
+## End-to-End Example
+
+The table below traces a full forwarding flow from the link you share to the URL the participant lands on after finishing the call.
+
+| Stage | URL |
+|-------|-----|
+| **Shared with participant** | `https://app.strella.io/onboard/abcd1234?forward_user_id=abcd-1234-efgh-5678&forward_source=cohort202602` |
+| **Participant completes interview → Strella redirects** | `https://customer-redirect-url.com/call-completed?user_id=abcd-1234-efgh-5678&source=cohort202602` |
+
+## Best Practices
+
+<Accordion title="URL-encode values with special characters">
+  If a parameter value contains spaces, ampersands, or other special characters, URL-encode them before adding them to the link. For example, a space becomes `%20` and an ampersand becomes `%26`. Most link-building tools handle this automatically, but verify if you're constructing URLs by hand.
+</Accordion>
+
+<Accordion title="Avoid passing raw PII in query strings">
+  Query strings are logged in browser history, server access logs, and analytics tools. Avoid placing sensitive personal information — full names, email addresses, government IDs — directly in URL parameters. Use opaque identifiers or hashed values instead.
+</Accordion>
+
+<Accordion title="Use stable, consistent IDs">
+  Use IDs that remain constant for a given participant across sessions — such as a CRM ID or a hashed email — rather than ephemeral values. Stable IDs make it much easier to join Strella data with your external systems reliably.
+</Accordion>
+
+<Accordion title="Combining capture and forwarding">
+  You can mix both modes in a single link. Parameters without the `forward_` prefix are captured in Strella; parameters with the prefix are forwarded to the redirect URL. Both sets can appear in the same query string.
+
+  ```text
+  https://app.strella.io/onboard/abcd1234?user_id=abcd-1234-efgh-5678&forward_source=cohort202602
+  ```
+
+  In this example, `user_id` is stored in Strella and `source` is forwarded to the redirect destination.
+</Accordion>

@@ -1,0 +1,77 @@
+---
+title: "Redirect Participants to a URL After Their Interview"
+sidebarTitle: "Redirect Participants"
+description: "Send participants to an external completion page or follow-up experience the moment they finish their Strella interview by configuring a redirect URL."
+---
+
+When participants click **Finish Call**, Strella can immediately send them to any URL you specify — a completion page, a follow-up survey, a thank-you landing page, or any other destination in your research workflow. Setting this up takes less than a minute and keeps your participant experience seamless from start to finish.
+
+## When to Use Post-Interview Redirects
+
+<CardGroup cols={2}>
+  <Card title="External completion tracking" icon="flag-checkered">
+    Route participants to a third-party platform (e.g., a panel provider or survey tool) that needs to register a completion event.
+  </Card>
+  <Card title="Follow-up experiences" icon="arrow-right">
+    Send participants directly into a follow-up survey, diary study, or supplementary task that builds on the interview.
+  </Card>
+  <Card title="Thank-you pages" icon="heart">
+    Land participants on a branded thank-you page that reinforces your company's identity and closes the experience gracefully.
+  </Card>
+  <Card title="Consistent completion behavior" icon="sliders">
+    Ensure every participant in a project arrives at the same post-interview destination, regardless of how they joined the study.
+  </Card>
+</CardGroup>
+
+## Set Up Your Redirect URL
+
+<Steps>
+  <Step title="Open your project settings">
+    Navigate to your project and click **Settings** in the top navigation bar.
+  </Step>
+  <Step title="Go to Interview Setup">
+    Select **Interview Setup** from the settings sidebar.
+  </Step>
+  <Step title="Enter your redirect URL">
+    Find the **Redirect to URL** field and enter the full destination URL, including `https://`.
+
+    ```text
+    https://customer-redirect-url.com/call-completed
+    ```
+  </Step>
+  <Step title="Save your changes">
+    Click **Save**. The redirect takes effect immediately for any participant who completes an interview after this point.
+  </Step>
+</Steps>
+
+<Warning>
+  Always enter a **full absolute URL** that begins with `https://`. A partial URL (e.g., `customer-redirect-url.com/call-completed` without the protocol) will not work and participants will see an error instead of your destination page.
+</Warning>
+
+## End-to-End Example
+
+Here's how the full participant journey looks once a redirect is configured:
+
+| Step | What happens |
+|------|-------------|
+| **1. Share your study link** | You send participants: `https://app.strella.io/onboard/abcd1234` |
+| **2. Participant completes interview** | They click **Finish Call** at the end of the session |
+| **3. Strella redirects** | Participant lands on: `https://customer-redirect-url.com/call-completed` |
+
+## Common Mistakes to Avoid
+
+<Accordion title="Entering a partial URL without https://">
+  The redirect URL field requires a fully qualified URL. If you paste in `customer-redirect-url.com/call-completed` without `https://`, the redirect will fail. Always include the protocol.
+</Accordion>
+
+<Accordion title="Saving the setting in the wrong project">
+  Redirect URLs are configured per project. If you have multiple active studies, open the correct project before saving. Saving in the wrong project will redirect participants from the wrong study.
+</Accordion>
+
+<Accordion title="Forgetting to update the URL when reusing a project">
+  If you reuse a project template from a previous study, check that the Redirect to URL field contains the right destination for the new study. Old redirect URLs carry over with the template.
+</Accordion>
+
+<Note>
+  If you need to pass participant or session metadata to the redirect destination — for example, a participant ID or campaign tag — see [Send Metadata via URL Parameters](/recruiting/send-metadata-via-url-parameters).
+</Note>

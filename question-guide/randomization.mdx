@@ -1,0 +1,73 @@
+---
+title: "Randomize Concepts in Your Strella Interview Guide"
+sidebarTitle: "Randomization"
+description: "Reduce order bias when testing multiple concepts by assigning participants to exclusive variants or shuffling all variants into a different sequence."
+---
+
+When you test multiple concepts, images, or prototypes in a single study, the order in which participants encounter them can skew their feedback—people tend to rate things differently depending on what they've already seen. Randomization removes that bias by varying the sequence or assignment across participants automatically.
+
+## Two Types of Randomization
+
+<CardGroup cols={2}>
+  <Card title="Exclusive" icon="dice-one">
+    Each participant is assigned **one variant at random** and never sees the others. Use this for **monadic testing** when you want clean, uncontaminated reactions to a single concept.
+  </Card>
+  <Card title="Shuffle" icon="shuffle">
+    Participants see **all variants in a random order**. Use this for **sequential monadic testing** when you need comparative data but want to neutralize order effects.
+  </Card>
+</CardGroup>
+
+<Info>
+  **Monadic testing** (Exclusive) gives you the purest single-concept reactions. **Sequential monadic testing** (Shuffle) lets participants compare concepts while still controlling for presentation order.
+</Info>
+
+## Setting Up Randomization
+
+<Steps>
+  <Step title="Click Add a step">
+    In the left-hand guide panel, scroll to the bottom and click **Add a step**.
+  </Step>
+  <Step title="Select Randomization">
+    From the element menu, click **Randomization**. A randomization block will appear in your guide.
+  </Step>
+  <Step title="Configure the randomization block">
+    Click the randomization block to open its settings in the right-hand panel. Set the following properties:
+
+    - **Label** — An internal name to identify this randomization block (participants won't see this).
+    - **Variant names** — Name each variant (e.g., Concept A, Concept B, Concept C).
+    - **Add or remove variants** — Use the controls to add more options or remove existing ones.
+    - **Distribution** — Select **Exclusive** or **Shuffle**.
+  </Step>
+  <Step title="Add content to each variant">
+    Each variant defaults to a question. To add a different element type—such as an image—click the **three dots** beside the variant name, then click the **+** icon and select the element you want (e.g., **Image**).
+  </Step>
+  <Step title="Upload your concept content">
+    Click the **Click to upload** box in the right-hand panel to upload the image or file for that variant. Repeat for each variant.
+  </Step>
+</Steps>
+
+## Example: Testing Three Image Concepts
+
+Here is how to set up a randomized image test for three visual concepts.
+
+<Steps>
+  <Step title="Add a Randomization block">
+    Click **Add a step** and select **Randomization**. Label the block *Concept Test*.
+  </Step>
+  <Step title="Name three variants">
+    Rename the default variants to **Concept A**, **Concept B**, and **Concept C**. Add a third variant if only two are shown by default.
+  </Step>
+  <Step title="Set distribution">
+    Choose **Exclusive** if each participant should see only one concept, or **Shuffle** if they should see all three in a random order.
+  </Step>
+  <Step title="Add an image to each variant">
+    For each variant, click the three dots beside the variant name → click the **+** sign → select **Image** → upload the concept image in the right-hand panel.
+  </Step>
+  <Step title="Add follow-up questions inside each variant">
+    After each image, add an open question such as: *What is your initial reaction to this concept?* This ensures the AI moderator captures qualitative feedback immediately after participants see each image.
+  </Step>
+</Steps>
+
+<Tip>
+  You can randomize any media type—not just images. Follow the same steps to randomize Figma prototypes, videos, or embedded content across variants.
+</Tip>

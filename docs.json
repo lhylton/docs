@@ -1,0 +1,138 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Strella",
+  "description": "Learn how to run AI-moderated user research studies with Strella — from building question guides to generating insights.",
+  "colors": {
+    "primary": "#f3e0c4",
+    "light": "#8c9484",
+    "dark": "#24252c"
+  },
+  "favicon": "https://media.brand.dev/8ee1ad8d-88e4-48dc-bbf0-2e89cd7db21c.jpg",
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "contextual": {
+    "options": ["copy", "view", "assistant"]
+  },
+  "navigation": {
+    "directory": "card",
+    "products": [
+      {
+        "product": "Guides",
+        "description": "Tutorials for running AI-moderated research studies in Strella.",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Get Started",
+            "icon": "rocket",
+            "expanded": true,
+            "root": "getting-started/index",
+            "pages": [
+              "getting-started/setting-up-your-research-study",
+              "getting-started/modifying-research-settings",
+              "getting-started/desktop-vs-mobile"
+            ]
+          },
+          {
+            "group": "Question Guide",
+            "icon": "list-checks",
+            "expanded": true,
+            "root": "question-guide/index",
+            "pages": [
+              "question-guide/setting-up-your-question-guide",
+              "question-guide/adding-media",
+              "question-guide/conditional-logic",
+              "question-guide/randomization",
+              "question-guide/previewing-and-publishing"
+            ]
+          },
+          {
+            "group": "Recruiting",
+            "icon": "users",
+            "expanded": true,
+            "root": "recruiting/index",
+            "pages": [
+              "recruiting/setting-up-a-screener",
+              "recruiting/how-to-hire-participants",
+              "recruiting/audience-templates",
+              "recruiting/inviting-participants",
+              "recruiting/extend-a-panel-audience",
+              "recruiting/choosing-incentives",
+              "recruiting/optimizing-response-rates",
+              "recruiting/participant-management",
+              "recruiting/redirect-participants",
+              "recruiting/send-metadata-via-url-parameters"
+            ]
+          },
+          {
+            "group": "Results & Analysis",
+            "icon": "chart-bar",
+            "expanded": true,
+            "root": "results/index",
+            "pages": [
+              "results/navigating-sessions",
+              "results/live-session-viewing",
+              "results/uploading-interviews",
+              "results/segmenting-sessions",
+              "results/navigating-responses",
+              "results/navigating-analysis",
+              "results/using-comparisons",
+              "results/navigating-reports"
+            ]
+          },
+          {
+            "group": "Insights",
+            "icon": "star",
+            "expanded": true,
+            "root": "insights/index",
+            "pages": [
+              "insights/insights-board",
+              "insights/creating-highlight-reels",
+              "insights/editing-highlight-reels",
+              "insights/sharing-insights",
+              "insights/chat-with-your-research"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "FAQs",
+        "description": "Quick answers for researchers and participants.",
+        "icon": "message-circle-question",
+        "groups": [
+          {
+            "group": "FAQs",
+            "icon": "message-circle-question",
+            "expanded": true,
+            "root": "faqs/index",
+            "pages": [
+              "faqs/researcher-faq",
+              "faqs/participant-faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "https://media.brand.dev/2b3913f2-f809-413e-8f8e-ac6f82a715fe.png",
+    "dark": "https://media.brand.dev/2b3913f2-f809-413e-8f8e-ac6f82a715fe.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Book a demo",
+        "href": "https://www.strella.io/request-a-demo"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get started",
+      "href": "https://app.strella.io"
+    }
+  }
+}
